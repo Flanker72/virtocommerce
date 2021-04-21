@@ -1,0 +1,27 @@
+{
+   "name": "virtocommerce-admin",
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Flanker72/virtocommerce.git"
+   },
+   "author": "Yuri A Taranov <me@flanker72.ru>",
+   "scripts": {
+      "dev": "nuxt",
+      "build": "nuxt build",
+      "generate": "nuxt generate",
+      "start": "nuxt start"
+   },
+   "dependencies": {
+      "core-js": "^3.10.2",
+      "nuxt": "^2.15.4",
+      "webpack": "^4.46.0"
+   },
+   "devDependencies": {
+      "@nuxtjs/storybook": "^4.0.2",
+      "less": "^4.1.1",
+      "less-loader": "^7.3.0",
+      "pug": "^3.0.2",
+      "pug-plain-loader": "^1.1.0",
+      "react": "^16.14.0"
+   }
+}

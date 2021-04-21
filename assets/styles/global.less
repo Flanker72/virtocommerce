@@ -1,0 +1,25 @@
+/**
+ * Global style pack
+ */
+ @import './colors';
+
+html, body, #__nuxt, #__layout {
+  margin: 0;
+  height: 100%;
+}
+
+.vc-Page {
+  &__wrapper {
+    height: 100%;
+    background: var(--background-color);
+  }
+}
+
+.vc-Link {
+  color: var(--basic-black-color);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
