@@ -1,25 +1,138 @@
 /**
  * Global style pack
  */
- @import './colors';
+@import './colors';
+@import './fonts';
 
 html, body, #__nuxt, #__layout {
   margin: 0;
   height: 100%;
+  font-family: 'Roboto';
+  font-size: 14px;
 }
 
-.vc-Page {
-  &__wrapper {
-    height: 100%;
-    background: var(--background-color);
-  }
-}
-
-.vc-Link {
+.vc-link {
   color: var(--basic-black-color);
   text-decoration: none;
 
   &:hover {
     text-decoration: underline;
+  }
+}
+
+.vc-container {
+  overflow: auto;
+}
+
+.vc-app {
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  &__left {
+    height: 100%;
+  }
+
+  &__right {
+    height: 100%;
+    flex-grow: 1;
+  }
+}
+
+.vc-app-bar {
+  display: flex;
+  width: 100%;
+  height: 60px;
+  background: var(--top-bar-color);
+  align-items: center;
+  color: white;
+
+  &__content {
+    flex-grow: 1;
+  }
+
+  &__right {
+    width: 325px;
+  }
+}
+
+.vc-drawer {
+  width: 240px;
+  height: 100%;
+  border-right: 1px solid lightgray;
+  background: var(--background-color);
+
+  &_collapsed {
+    width: 60px;
+
+    .vc-drawer-item__title {
+      display: none;
+    }
+  }
+
+  &__top {
+    height: 60px;
+    background: var(--top-bar-color);
+    align-items: center;
+    color: white;
+    display: flex;
+
+    &-image {
+      margin: 0 20px;
+    }
+
+    &-version {
+      color: grey;
+    }
+  }
+}
+
+.vc-drawer-toggler {
+  --icon-color: blue;
+}
+
+.vc-drawer-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid lightgray;
+  flex-wrap: nowrap;
+  padding: 0 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &__handler {
+    width: 10px;
+    color: gray;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    visibility: hidden;
+
+    &_enabled {
+      cursor: move;
+      visibility: visible;
+    }
+  }
+
+  &__icon {
+    width: 40px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 5px;
+    font-size: 10px;
+    font-weight: 100;
+    box-sizing: border-box;
+  }
+
+  &__title {
+    text-overflow: ellipsis;
+    flex-grow: 1;
+    font-size: 14px;
+  }
+
+  &:hover {
+    background: lightsteelblue;
   }
 }

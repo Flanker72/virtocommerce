@@ -6,4 +6,4 @@ export default {
    title: "Link"
 };
 
-export const Homepage = () => '<Link to="/">Stay Home, Wear Mask :)</Link>';
+export const Homepage = () => '<vc-link to="/">Stay Home, Wear Mask :)</vc-link>';

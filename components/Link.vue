@@ -1,5 +1,5 @@
 <template lang="pug">
-nuxt-link.vc-Link(:to="to")
+nuxt-link.vc-link(:to="to")
   slot
 </template>
 

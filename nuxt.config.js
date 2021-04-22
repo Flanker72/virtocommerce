@@ -18,7 +18,10 @@ export default {
    },
 
    // Enable Components autoimport
-   components: true,
+   components: [{
+      path: '~/components/',
+      prefix: 'vc'
+   }],
 
    // Load global styles
    css: ["~/assets/styles/global"]
