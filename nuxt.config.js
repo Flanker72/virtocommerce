@@ -18,17 +18,18 @@ export default {
    },
 
    // Enable Components autoimport
-   components: [{
-      path: "~/components/",
-      prefix: "vc"
-   }],
+   components: [
+      {
+         path: "~/components/",
+         prefix: "vc"
+      }
+   ],
 
    // Load global styles
    css: ["~/assets/styles/global"],
 
    storybook: {
-      stories: [
-        "~/stories/**/*.stories.js"
-      ],
-    }
+      addons: ["@storybook/addon-controls", "@storybook/addon-actions"],
+      stories: ["~/stories/**/*.stories.js"]
+   }
 };

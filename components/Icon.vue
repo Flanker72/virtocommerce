@@ -17,8 +17,8 @@
 
       size: {
         type: String,
-        default: "m"
-      }
+        default: "m",
+      },
     },
   };
 </script>

@@ -41,6 +41,7 @@
     methods: {
       toggleCollapsed() {
         this.collapsed = !this.collapsed;
+        this.$emit(this.collapsed ? "collapse" : "expand");
       },
     },
   };
