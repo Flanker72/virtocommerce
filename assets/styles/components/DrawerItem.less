@@ -1,29 +1,45 @@
+:root {
+  --drawer-item-height: 40px;
+  --drawer-item-icon-width: 20px;
+  --drawer-item-icon-color: #000000;
+  --drawer-item-handler-width: 20px;
+  --drawer-item-background-color: var(--drawer-background-color);
+  --drawer-item-background-color-hover: #eff7fc;
+  --drawer-item-border-bottom-color: #e7ebf1;
+  --drawer-item-title-font-weight: var(--font-weight-medium);
+  --drawer-item-title-font-size: var(--font-size-l);
+  --drawer-item-title-padding-right: 5px;
+  --drawer-item-title-padding-left: 9px;
+  --drawer-item-title-color: #161d25;
+  --drawer-item-handler-color: #bdd1df;
+}
+
 .vc-drawer-item {
   display: flex;
   align-items: center;
   width: 100%;
-  height: 40px;
-  border-bottom: 1px solid lightgray;
+  height: var(--drawer-item-height);
+  background-color: var(--drawer-item-background-color);
+  border-bottom: 1px solid var(--drawer-item-border-bottom-color);
   flex-wrap: nowrap;
-  padding: 0 5px;
   box-sizing: border-box;
   cursor: pointer;
 
   &__handler {
-    width: 10px;
-    color: gray;
+    width: var(--drawer-item-handler-width);
+    color: var(--drawer-item-handler-color);
     text-align: center;
     visibility: hidden;
     flex-shrink: 0;
 
     &_enabled {
       cursor: move;
-      visibility: visible;
     }
   }
 
   &__icon {
-    width: 40px;
+    width: var(--drawer-item-icon-width);
+    color: var(--drawer-item-icon-color);
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -32,11 +48,22 @@
 
   &__title {
     text-overflow: ellipsis;
-    flex-grow: 1;
-    font-size: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: var(--drawer-item-title-font-size);
+    font-weight: var(--drawer-item-title-font-weight);
+    padding-right: var(--drawer-item-title-padding-right);
+    padding-left: var(--drawer-item-title-padding-left);
+    color: var(--drawer-item-title-color);
   }
 
   &:hover {
-    background: lightsteelblue;
+    background-color: var(--drawer-item-background-color-hover);
+  }
+
+  &:hover &__handler {
+    &_enabled {
+      visibility: visible;
+    }
   }
 }

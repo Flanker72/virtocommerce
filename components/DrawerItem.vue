@@ -6,9 +6,7 @@
     <div class="vc-drawer-item__icon" v-if="icon">
       <vc-icon :icon="icon" size="m" />
     </div>
-    <div class="vc-drawer-item__title">
-      <slot></slot>
-    </div>
+    <div class="vc-drawer-item__title" :title="title">{{ title }}</div>
   </div>
 </template>
 
