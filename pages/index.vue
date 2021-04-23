@@ -14,27 +14,33 @@
         menuItems: [
           {
             id: 1,
-            title: "Stores",
-            icon: "stores",
-            to: "/stores",
-          },
-          {
-            id: 2,
             title: "Catalog",
-            icon: "catalog",
+            icon: "folder",
             to: "/catalog",
           },
           {
-            id: 3,
+            id: 2,
             title: "Contacts",
-            icon: "contacts",
+            icon: "address-card",
             to: "/contacts",
           },
           {
+            id: 3,
+            title: "Marketing",
+            icon: "flag",
+            to: "/marketing",
+          },
+          {
             id: 4,
-            title: "Search index",
-            icon: "search-index",
-            to: "/search-index",
+            title: "Thumbnails",
+            icon: "image",
+            to: "/thumbnails",
+          },
+          {
+            id: 5,
+            title: "Stores",
+            icon: "archive",
+            to: "/stores",
           },
         ],
       };

@@ -1,0 +1,30 @@
+.vc-drawer {
+  width: 240px;
+  height: 100%;
+  border-right: 1px solid lightgray;
+  background: var(--background-color);
+
+  &_collapsed {
+    width: 60px;
+
+    .vc-drawer-item__title {
+      display: none;
+    }
+  }
+
+  &__top {
+    height: 60px;
+    background: var(--top-bar-color);
+    align-items: center;
+    color: white;
+    display: flex;
+
+    &-image {
+      margin: 0 20px;
+    }
+
+    &-version {
+      color: grey;
+    }
+  }
+}

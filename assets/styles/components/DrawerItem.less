@@ -1,0 +1,42 @@
+.vc-drawer-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid lightgray;
+  flex-wrap: nowrap;
+  padding: 0 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &__handler {
+    width: 10px;
+    color: gray;
+    text-align: center;
+    visibility: hidden;
+    flex-shrink: 0;
+
+    &_enabled {
+      cursor: move;
+      visibility: visible;
+    }
+  }
+
+  &__icon {
+    width: 40px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  &__title {
+    text-overflow: ellipsis;
+    flex-grow: 1;
+    font-size: 14px;
+  }
+
+  &:hover {
+    background: lightsteelblue;
+  }
+}
