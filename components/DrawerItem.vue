@@ -1,26 +1,28 @@
-<template lang="pug">
-.vc-drawer-item(@click="$emit('click')")
-  .vc-drawer-item__handler(:class="{ 'vc-drawer-item__handler_enabled' : !sticky }") :
-  .vc-drawer-item__icon(v-if="icon") {{ icon }}
-  .vc-drawer-item__title
-    slot
+<template>
+  <div class="vc-drawer-item" @click="$emit('click')">
+    <div class="vc-drawer-item__handler" :class="{ 'vc-drawer-item__handler_enabled': !sticky }">:</div>
+    <div class="vc-drawer-item__icon" v-if="icon">{{ icon }}</div>
+    <div class="vc-drawer-item__title">
+      <slot></slot>
+    </div>
+  </div>
 </template>
 
 <script>
-export default {
-  props: {
-    sticky: {
-      type: Boolean,
-      default: false
-    },
+  export default {
+    props: {
+      sticky: {
+        type: Boolean,
+        default: false,
+      },
 
-    icon: {
-      type: String
-    },
+      icon: {
+        type: String,
+      },
 
-    title: {
-      type: String
-    }
-  }
-}
+      title: {
+        type: String,
+      },
+    },
+  };
 </script>

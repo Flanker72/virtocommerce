@@ -1,6 +1,7 @@
-<template lang="pug">
-nuxt-link.vc-link(:to="to")
-  slot
+<template>
+  <nuxt-link class="vc-link" :to="to">
+    <slot></slot>
+  </nuxt-link>
 </template>
 
 <script>

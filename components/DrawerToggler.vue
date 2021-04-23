@@ -1,4 +1,5 @@
-<template lang="pug">
-.vc-drawer-toggler(@click="$emit('click')")
-  vc-drawer-item(sticky, icon="menu")
+<template>
+  <div class="vc-drawer-toggler" @click="$emit('click')">
+    <vc-drawer-item sticky="sticky" icon="menu"></vc-drawer-item>
+  </div>
 </template>

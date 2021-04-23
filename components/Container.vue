@@ -1,4 +1,5 @@
-<template lang="pug">
-.vc-container
-  slot
+<template>
+  <div class="vc-container">
+    <slot></slot>
+  </div>
 </template>
