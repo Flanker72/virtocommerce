@@ -1,6 +1,10 @@
 <template>
   <vc-app>
-    <template slot="top">Banner, Top menu</template>
+    <template slot="banner">
+      <div>Running community edition, click to request a commercial license.</div>
+      <vc-button variant="special" title="Purchase"></vc-button>
+    </template>
+
     <vc-drawer slot="left" :items="menuItems"></vc-drawer>
 
     <span>Placeholder</span>

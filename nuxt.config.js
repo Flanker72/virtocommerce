@@ -28,6 +28,10 @@ export default {
    // Load global styles
    css: ["~/assets/styles/global"],
 
+   // Load plugins
+   plugins: ["~/plugins/composition"],
+
+   // Configure Storybook addon
    storybook: {
       addons: ["@storybook/addon-controls", "@storybook/addon-actions"],
       stories: ["~/stories/**/*.stories.js"]

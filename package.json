@@ -12,6 +12,7 @@
       "start": "nuxt start"
    },
    "dependencies": {
+      "@vue/composition-api": "^1.0.0-rc.7",
       "core-js": "^3.10.2",
       "nuxt": "^2.15.4",
       "webpack": "^4.46.0"

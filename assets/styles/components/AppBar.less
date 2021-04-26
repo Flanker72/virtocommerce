@@ -1,6 +1,10 @@
 :root {
   --app-bar-height: 60px;
   --app-bar-background-color: var(--top-bar-color);
+  --app-bar-toolbar-icon-background-hover: #2e3d4e;
+  --app-bar-divider-color: #2e3d4e;
+  --app-bar-toolbar-icon-color: #7e8e9d;
+  --app-bar-account-info-role-color: #838d9a;
 }
 
 .vc-app-bar {
@@ -8,14 +12,83 @@
   width: 100%;
   height: var(--app-bar-height);
   background: var(--app-bar-background-color);
-  align-items: center;
+  align-items: stretch;
   color: white;
 
-  &__content {
-    flex-grow: 1;
+  &__banner {
+    border-right: 1px solid var(--app-bar-divider-color);
+    padding-left: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    max-width: 407px;
+    flex-wrap: nowrap;
+    font-size: var(--font-size-s);
+
+    .vc-button {
+      margin: 0 20px;
+    }
   }
 
-  &__right {
+  &__toolbar {
+    display: flex;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      width: var(--app-bar-height);
+      height: 100%;
+      border-left: 1px solid var(--app-bar-divider-color);
+      justify-content: center;
+      cursor: pointer;
+      color: var(--app-bar-toolbar-icon-color);
+
+      &:hover {
+        background: var(--app-bar-toolbar-icon-background-hover);
+      }
+    }
+  }
+
+  &__account {
     width: 325px;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    border-left: 1px solid var(--app-bar-divider-color);
+    padding: 0 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    &:hover {
+      background: var(--app-bar-toolbar-icon-background-hover);
+    }
+
+    &-image {
+      border-radius: 50%;
+      overflow: hidden;
+      width: 34px;
+      height: 34px;
+      background-color: var(--app-bar-account-info-role-color);
+    }
+
+    &-info {
+      margin-left: 10px;
+      flex-grow: 1;
+
+      &-name {
+        font-size: var(--font-size-m);
+      }
+
+      &-role {
+        font-size: var(--font-size-m);
+        color: var(--app-bar-account-info-role-color);
+      }
+    }
+
+    &-chevron {
+      color: #747474;
+    }
   }
 }

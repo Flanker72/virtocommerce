@@ -5,7 +5,8 @@
     </div>
     <div class="vc-app__right">
       <vc-app-bar>
-        <slot name="top"></slot>
+        <slot name="banner" slot="banner"></slot>
+        <slot name="notification" slot="notification"></slot>
       </vc-app-bar>
       <vc-container>
         <slot></slot>
