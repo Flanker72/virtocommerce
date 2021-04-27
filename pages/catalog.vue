@@ -6,6 +6,7 @@
     width="600"
     :closable="false"
     :toolbarItems="toolbarItems"
+    :breadcrumbs="breadcrumbs"
   ></vc-blade>
 </template>
 
@@ -22,6 +23,21 @@
           { id: 6, icon: "cut", title: "Cut", disabled: true },
           { id: 7, icon: "paste", title: "Paste", disabled: true },
           { id: 8, icon: "cubes", title: "Bulk export", disabled: true },
+        ],
+        breadcrumbs: [
+          {
+            id: 0,
+            title: "Back",
+            icon: "arrow-left",
+          },
+          {
+            id: 1,
+            title: "Electronics",
+          },
+          {
+            id: 2,
+            title: "Desktop",
+          },
         ],
       };
     },

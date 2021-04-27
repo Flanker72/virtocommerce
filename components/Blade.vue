@@ -33,7 +33,21 @@
       </template>
     </div>
 
-    <div v-if="breadcrumbs" class="vc-blade__breadcrumbs"></div>
+    <div v-if="breadcrumbs" class="vc-blade__breadcrumbs">
+      <template v-for="(item, i) in breadcrumbs">
+        <div
+          class="vc-blade__breadcrumbs-item"
+          :class="{
+            'vc-blade__breadcrumbs-item_disabled': item.disabled,
+            'vc-blade__breadcrumbs-item_current': i === breadcrumbs.length - 1,
+          }"
+          :key="item.id"
+        >
+          <vc-icon class="vc-blade__breadcrumbs-item-icon" v-if="item.icon" :icon="item.icon" size="s"></vc-icon>
+          <div class="vc-blade__breadcrumbs-item-title">{{ item.title }}</div>
+        </div>
+      </template>
+    </div>
 
     <div v-if="searchable || filterable" class="vc-blade__searchbar">
       <div v-if="filterable" class="vc-blade__searchbar-filter"></div>
@@ -74,16 +88,6 @@
 
       breadcrumbs: {
         type: Array,
-        default: () => [
-          {
-            id: 1,
-            title: "Electronics",
-          },
-          {
-            id: 2,
-            title: "Desktop",
-          },
-        ],
       },
 
       searchable: {
