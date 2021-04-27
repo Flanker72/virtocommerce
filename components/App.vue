@@ -5,12 +5,17 @@
     </div>
     <div class="vc-app__right">
       <vc-app-bar>
-        <slot name="banner" slot="banner"></slot>
-        <slot name="notification" slot="notification"></slot>
+        <template v-slot:banner>
+          <slot name="banner"></slot>
+        </template>
+        <template v-slot:notification>
+          <slot name="notification"></slot>
+        </template>
       </vc-app-bar>
-      <vc-container>
+
+      <div class="vc-app__right-content">
         <slot></slot>
-      </vc-container>
+      </div>
     </div>
   </div>
 </template>

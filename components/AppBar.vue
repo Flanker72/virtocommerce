@@ -30,7 +30,7 @@
     props: {
       toolbar: {
         type: Array,
-        default: [
+        default: () => [
           {
             id: "settings",
             icon: "cog",

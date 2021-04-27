@@ -1,5 +1,5 @@
 <template>
-  <div class="vc-drawer-item" @click="$emit('click')">
+  <nuxt-link :to="to" class="vc-drawer-item" @click="$emit('click')">
     <div class="vc-drawer-item__handler" :class="{ 'vc-drawer-item__handler_enabled': !sticky }">
       <vc-icon icon="ellipsis-v" size="m" />
     </div>
@@ -7,7 +7,7 @@
       <vc-icon :icon="icon" size="m" />
     </div>
     <div class="vc-drawer-item__title" :title="title">{{ title }}</div>
-  </div>
+  </nuxt-link>
 </template>
 
 <script>
@@ -24,6 +24,11 @@
 
       title: {
         type: String,
+      },
+
+      to: {
+        type: String,
+        default: "/",
       },
     },
   };
