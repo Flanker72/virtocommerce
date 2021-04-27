@@ -15,12 +15,23 @@
     <div class="vc-blade__header">
       <div class="vc-blade__header-icon"><vc-icon :icon="icon" size="xxl"></vc-icon></div>
       <div class="vc-blade__header-info">
-        <div class="vc-blade__header-title">{{ title }}</div>
-        <div class="vc-blade__header-subtitle">{{ subtitle }}</div>
+        <div class="vc-blade__header-title" :class="{ 'vc-blade__header-title_only': !subtitle }">{{ title }}</div>
+        <div class="vc-blade__header-subtitle" v-if="subtitle">{{ subtitle }}</div>
       </div>
     </div>
 
-    <div v-if="toolbarItems" class="vc-blade__toolbar"></div>
+    <div v-if="toolbarItems" class="vc-blade__toolbar">
+      <template v-for="item in toolbarItems">
+        <div
+          class="vc-blade__toolbar-item"
+          :class="{ 'vc-blade__toolbar-item_disabled': item.disabled }"
+          :key="item.id"
+        >
+          <vc-icon :icon="item.icon" size="s"></vc-icon>
+          <div class="vc-blade__toolbar-item-title">{{ item.title }}</div>
+        </div>
+      </template>
+    </div>
 
     <div v-if="breadcrumbs" class="vc-blade__breadcrumbs"></div>
 
@@ -59,13 +70,6 @@
 
       toolbarItems: {
         type: Array,
-        default: () => [
-          {
-            id: 1,
-            icon: "sync-alt",
-            title: "Refresh",
-          },
-        ],
       },
 
       breadcrumbs: {
