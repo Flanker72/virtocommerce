@@ -22,7 +22,7 @@ const Template = (args, { argTypes }) => ({
 export const Drawer = Template.bind({});
 Drawer.args = {
    version: "0.0.1",
-   logo: "assets/images/logo.svg",
+   logo: "/images/logo.svg",
    items: [
       {
          id: 1,
