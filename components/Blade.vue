@@ -51,8 +51,13 @@
 
     <div v-if="searchable || filterable" class="vc-blade__searchbar">
       <div v-if="filterable" class="vc-blade__searchbar-filter"></div>
-      <div class="vc-blade__searchbar-search"></div>
-      <div v-if="filterable" class="vc-blade__searchbar-counter"></div>
+      <div class="vc-blade__searchbar-search">
+        <vc-input placeholder="Search keywords" clearable="clearable"></vc-input>
+      </div>
+      <div v-if="filterable" class="vc-blade__searchbar-counter">
+        <span class="vc-blade__searchbar-counter-label">Count:</span>
+        <span class="vc-blade__searchbar-counter-value">4</span>
+      </div>
     </div>
   </div>
 </template>
@@ -92,12 +97,10 @@
 
       searchable: {
         type: Boolean,
-        default: true,
       },
 
       filterable: {
         type: Boolean,
-        default: true,
       },
     },
 

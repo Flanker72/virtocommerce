@@ -17,6 +17,24 @@ export default {
       }
    },
 
+   modules: ["nuxt-i18n"],
+
+   i18n: {
+      locales: [
+         {
+            code: "en",
+            file: "en.json"
+         },
+         {
+            code: "ru",
+            file: "ru.json"
+         }
+      ],
+      defaultLocale: "en",
+      strategy: "no_prefix",
+      langDir: "~/locales/"
+   },
+
    // Enable Components autoimport
    components: [
       {
