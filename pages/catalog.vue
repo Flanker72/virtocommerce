@@ -7,7 +7,9 @@
     :closable="false"
     :toolbarItems="toolbarItems"
     :breadcrumbs="breadcrumbs"
-  ></vc-blade>
+    :searchable="true"
+  >
+  </vc-blade>
 </template>
 
 <script>
@@ -24,6 +26,7 @@
           { id: 7, icon: "paste", title: "Paste", disabled: true },
           { id: 8, icon: "cubes", title: "Bulk export", disabled: true },
         ],
+
         breadcrumbs: [
           {
             id: 0,
@@ -37,6 +40,28 @@
           {
             id: 2,
             title: "Desktop",
+          },
+        ],
+
+        columns: [
+          {
+            id: "action",
+            title: "",
+            align: "center",
+          },
+          {
+            id: "img",
+            title: "Pic",
+          },
+          {
+            id: "name",
+            title: "Name",
+            sortable: true,
+          },
+          {
+            id: "sku",
+            title: "SKU",
+            sortable: true,
           },
         ],
       };
