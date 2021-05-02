@@ -1,6 +1,6 @@
 <template>
   <div class="vc-blade" :style="{ width: `${width}px` }" :class="{ 'vc-blade_expanded': expanded }">
-    <div class="vc-blade__topbar">
+    <div class="vc-blade__topbar vc-flex-shrink_0">
       <div class="vc-blade__topbar-button" v-if="expanded" @click="expanded = false">
         <vc-icon icon="window-minimize" size="s"></vc-icon>
       </div>
@@ -12,7 +12,7 @@
       </div>
     </div>
 
-    <div class="vc-blade__header">
+    <div class="vc-blade__header vc-flex-shrink_0">
       <div class="vc-blade__header-icon"><vc-icon :icon="icon" size="xxl"></vc-icon></div>
       <div class="vc-blade__header-info">
         <div class="vc-blade__header-title" :class="{ 'vc-blade__header-title_only': !subtitle }">{{ title }}</div>
@@ -20,7 +20,7 @@
       </div>
     </div>
 
-    <div v-if="toolbarItems" class="vc-blade__toolbar">
+    <div v-if="toolbarItems" class="vc-blade__toolbar vc-flex-shrink_0">
       <template v-for="item in toolbarItems">
         <div
           class="vc-blade__toolbar-item"
@@ -35,11 +35,11 @@
 
     <vc-breadcrumbs
       v-if="breadcrumbs"
-      class="vc-padding_l vc-padding-bottom_none"
+      class="vc-padding_l vc-padding-bottom_none vc-flex-shrink_0"
       :items="breadcrumbs"
     ></vc-breadcrumbs>
 
-    <div v-if="searchable || filterable" class="vc-blade__searchbar vc-padding_l">
+    <div v-if="searchable || filterable" class="vc-blade__searchbar vc-padding_l vc-flex-shrink_0">
       <div v-if="filterable" class="vc-blade__searchbar-filter"></div>
       <div class="vc-blade__searchbar-search">
         <vc-input placeholder="Search keywords" clearable="clearable"></vc-input>
@@ -50,9 +50,7 @@
       </div>
     </div>
 
-    <vc-container>
-      <slot></slot>
-    </vc-container>
+    <slot></slot>
   </div>
 </template>
 

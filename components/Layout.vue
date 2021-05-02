@@ -5,7 +5,7 @@
     </div>
 
     <div class="vc-flex vc-flex-grow_1 vc-flex-column">
-      <div class="vc-layout__topbar vc-flex vc-fill_width vc-flex-align_stretch">
+      <div class="vc-layout__topbar vc-flex vc-fill_width vc-flex-align_stretch vc-flex-shrink_0">
         <div v-if="$slots['banner']" class="vc-layout__topbar-banner">
           <slot name="banner"></slot>
         </div>

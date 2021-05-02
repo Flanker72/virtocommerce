@@ -1,32 +1,74 @@
 <template>
-  <div class="vc-table">
-    <div v-if="columns" class="vc-table__header">
-      <div v-if="multiselect" class="vc-table__header-cell">
-        <vc-checkbox></vc-checkbox>
-      </div>
-      <div
-        v-for="item in columns"
-        :key="item.id"
-        class="vc-table__header-cell vc-flex vc-flex-justify_start vc-flex-align_center vc-flex-nowrap"
-      >
-        <div>{{ item.title }}</div>
-        <div v-if="item.sortable" class="vc-table__header-cell_sort">
-          <vc-icon size="xs" icon="sort-up"></vc-icon>
-        </div>
-      </div>
-    </div>
-    <div v-if="data" class="vc-table__content"></div>
+  <div class="vc-table-wrapper">
+    <table
+      class="vc-table vc-fill_width"
+      :class="{ 'vc-table_empty': !items || !items.length, 'vc-table_multiselect': multiselect }"
+    >
+      <thead v-if="headers" class="vc-table__header">
+        <tr class="vc-table__header-row">
+          <td v-if="multiselect" class="vc-table__header-cell" width="20">
+            <div class="vc-flex vc-flex-justify_center vc-flex-align_center">
+              <vc-checkbox></vc-checkbox>
+            </div>
+          </td>
+          <td
+            v-for="item in headers"
+            :key="item.id"
+            class="vc-table__header-cell vc-padding-horizontal_m"
+            :width="item.width"
+          >
+            <div
+              class="vc-flex vc-flex-align_center vc-flex-nowrap"
+              :class="`vc-flex-justify_${item.align || 'start'}`"
+            >
+              <div>
+                <slot :name="`header_${item.id}`">{{ item.title }}</slot>
+              </div>
+              <div v-if="item.sortable" class="vc-table__header-cell_sort vc-margin-left_xs">
+                <vc-icon size="xs" icon="caret-up"></vc-icon>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </thead>
+
+      <tbody v-if="items" class="vc-table__body">
+        <tr v-for="item in items" :key="item.id" class="vc-table__body-row">
+          <td v-if="multiselect" class="vc-table__body-cell vc-table__body-cell_bordered" width="20">
+            <div class="vc-flex vc-flex-justify_center vc-flex-align_center">
+              <vc-checkbox></vc-checkbox>
+            </div>
+          </td>
+          <td v-if="item.actions" class="vc-table__body-cell vc-table__body-cell_bordered" width="20">
+            <div class="vc-flex vc-flex-justify_center vc-flex-align_center">
+              <vc-icon icon="ellipsis-v" size="m"></vc-icon>
+            </div>
+          </td>
+          <td
+            v-for="cell in headers"
+            :key="`${item.id}_${cell.id}`"
+            class="vc-table__body-cell vc-padding-horizontal_m"
+            :class="cell.class"
+            :width="cell.width"
+          >
+            <div class="vc-flex vc-flex-align_center">
+              <slot :name="`item_${cell.id}`" :item="item">{{ item[cell.id] }}</slot>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
 <script>
   export default {
     props: {
-      columns: {
+      headers: {
         type: Array,
       },
 
-      data: {
+      items: {
         type: Array,
       },
 
