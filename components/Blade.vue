@@ -15,8 +15,8 @@
     <div class="vc-blade__header vc-flex-shrink_0">
       <div class="vc-blade__header-icon"><vc-icon :icon="icon" size="xxl"></vc-icon></div>
       <div class="vc-blade__header-info">
-        <div class="vc-blade__header-title" :class="{ 'vc-blade__header-title_only': !subtitle }">{{ title }}</div>
-        <div class="vc-blade__header-subtitle" v-if="subtitle">{{ subtitle }}</div>
+        <div class="vc-blade__header-title" :class="{ 'vc-blade__header-title_only': !subtitle }">{{ $t(title) }}</div>
+        <div class="vc-blade__header-subtitle" v-if="subtitle">{{ $t(subtitle) }}</div>
       </div>
     </div>
 
@@ -28,7 +28,7 @@
           :key="item.id"
         >
           <vc-icon :icon="item.icon" size="s"></vc-icon>
-          <div class="vc-blade__toolbar-item-title">{{ item.title }}</div>
+          <div class="vc-blade__toolbar-item-title">{{ $t(item.title) }}</div>
         </div>
       </template>
     </div>
@@ -42,7 +42,7 @@
     <div v-if="searchable || filterable" class="vc-blade__searchbar vc-padding_l vc-flex-shrink_0">
       <div v-if="filterable" class="vc-blade__searchbar-filter"></div>
       <div class="vc-blade__searchbar-search">
-        <vc-input placeholder="Search keywords" clearable="clearable"></vc-input>
+        <vc-input :placeholder="$t('Search keywords')" clearable="clearable"></vc-input>
       </div>
       <div v-if="filterable" class="vc-blade__searchbar-counter">
         <span class="vc-blade__searchbar-counter-label">Count:</span>

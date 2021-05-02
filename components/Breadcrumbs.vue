@@ -10,7 +10,7 @@
         :key="item.id"
       >
         <vc-icon class="vc-breadcrumbs__item-icon" v-if="item.icon" :icon="item.icon" size="s"></vc-icon>
-        <div class="vc-breadcrumbs__item-title">{{ item.title }}</div>
+        <div class="vc-breadcrumbs__item-title">{{ $t(item.title) }}</div>
       </div>
     </template>
   </div>

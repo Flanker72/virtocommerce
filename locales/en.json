@@ -7,5 +7,27 @@
    "Help": "Help",
    "Notifications": "Notifications",
    "Switch Locale": "Switch Locale",
-   "Switch Dark/Light mode": "Switch Dark/Light mode"
+   "Switch Dark/Light mode": "Switch Dark/Light mode",
+   "Search keywords": "Search keywords",
+   "Refresh": "Refresh",
+   "Add": "Add",
+   "Delete": "Delete",
+   "Import": "Import",
+   "Export": "Export",
+   "Cut": "Cut",
+   "Copy": "Copy",
+   "Paste": "Paste",
+   "Bulk export": "Bulk export",
+
+   "Home": "Home",
+   "Catalog": "Catalog",
+   "Manage catalogs": "Manage catalogs",
+   "Contacts": "Contacts",
+   "Manage contacts": "Manage contacts",
+   "Marketing": "Marketing",
+   "Thumbnails": "Thumbnails",
+   "Stores": "Stores",
+   "Manage stores": "Manage stores",
+   "More": "More",
+   "Back": "Back"
 }

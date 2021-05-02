@@ -6,9 +6,9 @@
     </div>
     <vc-drawer-toggler @click="toggleCollapsed()"></vc-drawer-toggler>
     <vc-container class="vc-drawer__content">
-      <vc-drawer-item icon="home" to="/" sticky="sticky" title="Home" />
-      <vc-drawer-item v-for="item in items" :key="item.id" :icon="item.icon" :to="item.to" :title="item.title" />
-      <vc-drawer-item icon="ellipsis-h" sticky="sticky" title="More" />
+      <vc-drawer-item icon="home" to="/" sticky="sticky" :title="$t('Home')" />
+      <vc-drawer-item v-for="item in items" :key="item.id" :icon="item.icon" :to="item.to" :title="$t(item.title)" />
+      <vc-drawer-item icon="ellipsis-h" sticky="sticky" :title="$t('More')" />
     </vc-container>
   </div>
 </template>
