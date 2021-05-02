@@ -6,7 +6,7 @@
     >
       <thead v-if="headers" class="vc-table__header">
         <tr class="vc-table__header-row">
-          <td v-if="multiselect" class="vc-table__header-cell" width="20">
+          <td v-if="multiselect" class="vc-table__header-cell" width="32">
             <div class="vc-flex vc-flex-justify_center vc-flex-align_center">
               <vc-checkbox></vc-checkbox>
             </div>

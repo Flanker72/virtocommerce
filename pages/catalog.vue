@@ -9,7 +9,7 @@
     :breadcrumbs="breadcrumbs"
     :searchable="true"
   >
-    <vc-table :headers="headers" :items="items" :multiselect="true" :actions="actions">
+    <vc-table :headers="headers" :items="items" :multiselect="true">
       <template v-slot:item_img="itemData">
         <img :src="itemData.item.img" class="vc-fill_width" />
       </template>
