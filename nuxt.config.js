@@ -47,7 +47,7 @@ export default {
    css: ["~/assets/styles/global"],
 
    // Load plugins
-   plugins: ["~/plugins/composition", "~/plugins/blade"],
+   plugins: ["~/plugins/composition"],
 
    // Configure Storybook addon
    storybook: {

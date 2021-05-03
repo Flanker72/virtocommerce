@@ -7,7 +7,11 @@
       <div class="vc-blade__topbar-button" v-else @click="expanded = true">
         <vc-icon icon="window-maximize" size="s"></vc-icon>
       </div>
-      <div class="vc-blade__topbar-button" :class="{ 'vc-blade__topbar-button_disabled': !closable }">
+      <div
+        class="vc-blade__topbar-button"
+        :class="{ 'vc-blade__topbar-button_disabled': !closable }"
+        @click="closable && $emit('close')"
+      >
         <vc-icon icon="times"></vc-icon>
       </div>
     </div>
