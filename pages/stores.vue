@@ -8,7 +8,7 @@
     :toolbarItems="toolbarItems"
     :searchable="true"
   >
-    <vc-table :headers="headers" :items="items" :multiselect="true">
+    <vc-table :headers="headers" :items="items" :multiselect="true" @itemClick="$bladeOpener.open()">
       <template v-slot:item_actions>
         <vc-icon icon="ellipsis-v" style="color: #43b0e6"></vc-icon>
       </template>

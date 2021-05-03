@@ -33,7 +33,7 @@
       </thead>
 
       <tbody v-if="items" class="vc-table__body">
-        <tr v-for="item in items" :key="item.id" class="vc-table__body-row">
+        <tr v-for="item in items" :key="item.id" class="vc-table__body-row" @click="$emit('itemClick', item)">
           <td v-if="multiselect" class="vc-table__body-cell vc-table__body-cell_bordered" width="20">
             <div class="vc-flex vc-flex-justify_center vc-flex-align_center">
               <vc-checkbox></vc-checkbox>
