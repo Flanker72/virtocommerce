@@ -16,16 +16,17 @@ export default {
 const Template = (args, { argTypes }) => ({
    components: { VCBlade },
    props: Object.keys(argTypes),
-   template: '<vc-blade v-bind="$props" v-on="$props"></vc-blade>'
+   template: '<vc-blade v-bind="$props" v-on="$props"><div class="vc-padding_l">Blade Contents</div></vc-blade>'
 });
 
 export const Blade = Template.bind({});
 Blade.args = {
    icon: "star",
    title: "My Awesome Blade",
-   subtitle:  "Optional Subtitle",
-   width: 500,
+   subtitle: "Optional Subtitle",
+   width: 700,
    closable: false,
+   searchable: false,
 
    toolbarItems: [
       { id: 1, icon: "sync-alt", title: "Refresh" },
@@ -35,21 +36,22 @@ Blade.args = {
       { id: 5, icon: "upload", title: "Export" },
       { id: 6, icon: "cut", title: "Cut", disabled: true },
       { id: 7, icon: "paste", title: "Paste", disabled: true },
-      { id: 8, icon: "cubes", title: "Bulk export", disabled: true },
-    ],
-    breadcrumbs: [
+      { id: 8, icon: "cubes", title: "Bulk export", disabled: true }
+   ],
+
+   breadcrumbs: [
       {
-        id: 0,
-        title: "Back",
-        icon: "arrow-left",
+         id: 0,
+         title: "Back",
+         icon: "arrow-left"
       },
       {
-        id: 1,
-        title: "Electronics",
+         id: 1,
+         title: "Electronics"
       },
       {
-        id: 2,
-        title: "Desktop",
-      },
-    ]
+         id: 2,
+         title: "Desktop"
+      }
+   ]
 };

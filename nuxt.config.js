@@ -52,6 +52,7 @@ export default {
    // Configure Storybook addon
    storybook: {
       addons: ["@storybook/addon-controls", "@storybook/addon-actions"],
-      stories: ["~/stories/**/*.stories.js"]
+      stories: ["~/stories/**/*.stories.js"],
+      decorators: ["<div class='vc-theme_light'><story/></div>"]
    }
 };

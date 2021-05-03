@@ -32,6 +32,7 @@
           class="vc-layout__topbar-account vc-flex vc-flex-shrink_0 vc-flex-align_center"
           :class="{ 'vc-layout__topbar-account_active': accountMenuVisible }"
           @click="accountMenuVisible = !accountMenuVisible"
+          v-if="account"
         >
           <div class="vc-layout__topbar-account-avatar" :style="{ 'background-image': `url(${account.avatar})` }"></div>
           <div class="vc-flex-grow_1 vc-margin-left_m">
