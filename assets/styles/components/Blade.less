@@ -94,4 +94,58 @@
       }
     }
   }
+
+  &__searchbar {
+    box-sizing: border-box;
+
+    &-filter {
+      position: relative;
+
+      &-toggler {
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      &-label {
+        color: #43b0e6;
+      }
+
+      &-chevron {
+        color: #43b0e6;
+      }
+
+      &-menu {
+        position: absolute;
+        left: 0;
+        top: 120%;
+        width: 200px;
+        background: white;
+        border: 1px solid #e7ebf1;
+        border-bottom: 0;
+
+        &-item {
+          padding: 12px;
+          border-bottom: 1px solid #e7ebf1;
+          cursor: pointer;
+
+          &:hover {
+            background: #eff7fc;
+          }
+        }
+      }
+    }
+
+    &-counter {
+      font-size: 16px;
+      font-weight: var(--font-weight-medium);
+
+      &-label {
+        color: #333333;
+      }
+
+      &-value {
+        color: #43b0e6;
+      }
+    }
+  }
 }

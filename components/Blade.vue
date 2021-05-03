@@ -27,7 +27,7 @@
           :class="{ 'vc-blade__toolbar-item_disabled': item.disabled }"
           :key="item.id"
         >
-          <vc-icon :icon="item.icon" size="s"></vc-icon>
+          <vc-icon :icon="item.icon" size="ss"></vc-icon>
           <div class="vc-blade__toolbar-item-title">{{ $t(item.title) }}</div>
         </div>
       </template>
@@ -39,14 +39,34 @@
       :items="breadcrumbs"
     ></vc-breadcrumbs>
 
-    <div v-if="searchable || filterable" class="vc-blade__searchbar vc-padding_l vc-flex-shrink_0">
-      <div v-if="filterable" class="vc-blade__searchbar-filter"></div>
-      <div class="vc-blade__searchbar-search">
+    <div
+      v-if="searchable || filterable"
+      class="vc-blade__searchbar vc-flex vc-flex-align_center vc-fill_width vc-padding_l vc-flex-shrink_0"
+    >
+      <div v-if="filterable" class="vc-blade__searchbar-filter vc-margin-right_l">
+        <div
+          class="vc-blade__searchbar-filter-toggler vc-flex vc-flex-align-center"
+          @click="filterOpened = !filterOpened"
+        >
+          <div class="vc-blade__searchbar-filter-label">{{ $t("Select filter") }}</div>
+          <vc-icon
+            :icon="filterOpened ? 'caret-up' : 'caret-down'"
+            size="s"
+            class="vc-blade__searchbar-filter-chevron vc-margin-left_s"
+          ></vc-icon>
+        </div>
+        <div class="vc-blade__searchbar-filter-menu" v-if="filterOpened">
+          <div class="vc-blade__searchbar-filter-menu-item" @click="filterOpened = false">Item 1</div>
+          <div class="vc-blade__searchbar-filter-menu-item" @click="filterOpened = false">Item 2</div>
+          <div class="vc-blade__searchbar-filter-menu-item" @click="filterOpened = false">Item 3</div>
+        </div>
+      </div>
+      <div class="vc-blade__searchbar-search vc-flex-grow_1">
         <vc-input :placeholder="$t('Search keywords')" clearable="clearable"></vc-input>
       </div>
-      <div v-if="filterable" class="vc-blade__searchbar-counter">
-        <span class="vc-blade__searchbar-counter-label">Count:</span>
-        <span class="vc-blade__searchbar-counter-value">4</span>
+      <div v-if="filterable" class="vc-blade__searchbar-counter vc-margin-left_l">
+        <span class="vc-blade__searchbar-counter-label">{{ $t("Count") }}:</span>
+        <span class="vc-blade__searchbar-counter-value">5</span>
       </div>
     </div>
 
@@ -99,6 +119,7 @@
     data() {
       return {
         expanded: false,
+        filterOpened: false,
       };
     },
   };

@@ -39,11 +39,6 @@
               <vc-checkbox></vc-checkbox>
             </div>
           </td>
-          <td v-if="item.actions" class="vc-table__body-cell vc-table__body-cell_bordered" width="20">
-            <div class="vc-flex vc-flex-justify_center vc-flex-align_center">
-              <vc-icon icon="ellipsis-v" size="m"></vc-icon>
-            </div>
-          </td>
           <td
             v-for="cell in headers"
             :key="`${item.id}_${cell.id}`"

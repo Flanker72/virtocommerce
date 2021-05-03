@@ -8,11 +8,17 @@
     :toolbarItems="toolbarItems"
     :breadcrumbs="breadcrumbs"
     :searchable="true"
+    :filterable="true"
   >
     <vc-table :headers="headers" :items="items" :multiselect="true">
+      <template v-slot:item_actions>
+        <vc-icon icon="ellipsis-v" style="color: #43b0e6"></vc-icon>
+      </template>
+
       <template v-slot:item_img="itemData">
         <img :src="itemData.item.img" class="vc-fill_width" />
       </template>
+
       <template v-slot:item_name="itemData">
         <div class="vc-flex vc-flex-column">
           <div class="vc-font-size_m vc-ellipsis">{{ itemData.item.name }}</div>
@@ -55,6 +61,12 @@
         ],
 
         headers: [
+          {
+            id: "actions",
+            title: "",
+            width: 30,
+            class: "vc-table__body-cell_bordered",
+          },
           {
             id: "img",
             title: "Pic",
